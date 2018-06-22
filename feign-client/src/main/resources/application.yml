@@ -1,0 +1,17 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8761/eureka/
+server:
+  port: 8004
+spring:
+  application:
+    name: feign-client
+feign:
+  hystrix:
+    enabled: true
+management:
+  security:
+    enabled: false
+logging:
+  path: logs

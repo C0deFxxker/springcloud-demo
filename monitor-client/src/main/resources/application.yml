@@ -1,0 +1,22 @@
+server:
+  port: 8769
+spring:
+  application:
+    name: service-turbine
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+turbine:
+  # 表示集群的名字为default
+  cluster-name-expression: "'default'"
+  # 指定了要监控的应用名字(服务消费者)
+  app-config: feign-client, ribbon-client
+  # 表示同一主机上的服务通过host和port的组合来进行区分，默认情况下是使用host来区分，这样会使本地调试有问题
+  combine-host-port: true
+# 关闭安全认证
+management:
+  security:
+    enabled: false
+logging:
+  path: logs
